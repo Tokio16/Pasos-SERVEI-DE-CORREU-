@@ -2,7 +2,7 @@
 
 Este documento detalla los pasos seguidos para configurar un servidor de correo completo con Postfix, Dovecot y Roundcube en un entorno Ubuntu.
 
-1. Actualización y LAMP
+## 1. Actualización y LAMP
 
 Primero, actualizamos el sistema e instalamos el servidor web y la base de datos necesarios para el webmail.
 
@@ -11,7 +11,7 @@ sudo apt install apache2 mysql-server -y
 sudo apt install php php-mysql php-intl php-xml php-mbstring php-curl php-zip -y
 
 
-2. Configuración de Postfix (Envío)
+## 2. Configuración de Postfix (Envío)
 
 Instalamos Postfix y editamos el archivo /etc/postfix/main.cf para definir nuestro dominio y la estructura de las carpetas de correo:
 
@@ -22,7 +22,7 @@ Mailbox: Maildir/
 sudo service postfix restart
 
 
-3. Configuración de Dovecot (Recepción)
+## 3. Configuración de Dovecot (Recepción)
 
 Instalamos los paquetes de Dovecot y configuramos la ubicación del correo en /etc/dovecot/conf.d/10-mail.conf:
 
@@ -38,7 +38,7 @@ auth_mechanisms = plain login
 sudo service dovecot restart
 
 
-4. Roundcube (Webmail)
+## 4. Roundcube (Webmail)
 
 Configuramos la interfaz web de Roundcube editando el archivo de configuración /etc/roundcube/config.inc.php:
 
@@ -52,7 +52,7 @@ sudo a2enconf roundcube
 sudo service apache2 restart
 
 
-5. Usuarios de Prueba
+## 5. Usuarios de Prueba
 
 Para verificar que todo funciona, creamos dos usuarios y generamos sus directorios de correo correspondientes:
 
