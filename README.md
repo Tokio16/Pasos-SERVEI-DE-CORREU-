@@ -1,7 +1,3 @@
-Guía de Instalación: Servidor de Correo en Ubuntu
-
-Este documento detalla los pasos para configurar un servidor de correo completo con Postfix, Dovecot y Roundcube.
-
 1. Actualización y LAMP
 
 Primero, actualizamos el sistema e instalamos el servidor web y base de datos.
@@ -13,7 +9,7 @@ sudo apt install php php-mysql php-intl php-xml php-mbstring php-curl php-zip -y
 
 2. Configuración de Postfix (Envío)
 
-Edita /etc/postfix/main.cf con los siguientes valores de red y dominio:
+Edita el archivo /etc/postfix/main.cf con los siguientes valores de red y dominio:
 
 Dominio: caparrella.local
 
@@ -35,9 +31,12 @@ disable_plaintext_auth = no
 
 auth_mechanisms = plain login
 
+sudo service dovecot restart
+
+
 4. Roundcube (Webmail)
 
-Configuramos la interfaz web editando /etc/roundcube/config.inc.php:
+Configuramos la interfaz web editando el archivo /etc/roundcube/config.inc.php:
 
 $config['smtp_host'] = 'localhost:25';
 $config['mail_domain'] = 'caparrella.local';
@@ -51,7 +50,14 @@ sudo service apache2 restart
 
 5. Usuarios de Prueba
 
+Para probar el sistema, creamos los usuarios y sus buzones correspondientes:
+
 # Crear usuario Batman
 sudo adduser batman
 sudo maildirmake.dovecot /home/batman/Maildir
 sudo chown -R batman:batman /home/batman/Maildir
+
+# Crear usuario Robin
+sudo adduser robin
+sudo maildirmake.dovecot /home/robin/Maildir
+sudo chown -R robin:robin /home/robin/Maildir
