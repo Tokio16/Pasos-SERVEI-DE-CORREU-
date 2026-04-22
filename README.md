@@ -1,4 +1,4 @@
-Guía de Instalación: Servidor de Correo en Ubuntu
+# Guía de Instalación: Servidor de Correo en Ubuntu
 
 Este documento detalla los pasos seguidos para configurar un servidor de correo completo con Postfix, Dovecot y Roundcube en un entorno Ubuntu.
 
