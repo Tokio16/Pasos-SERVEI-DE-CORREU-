@@ -5,11 +5,11 @@ Este documento detalla los pasos seguidos para configurar un servidor de correo 
 ## 1. Actualización y LAMP
 
 Primero, actualizamos el sistema e instalamos el servidor web y la base de datos necesarios para el webmail.
-
+```bash
 sudo apt update && sudo apt upgrade
 sudo apt install apache2 mysql-server -y
 sudo apt install php php-mysql php-intl php-xml php-mbstring php-curl php-zip -y
-
+```
 
 ## 2. Configuración de Postfix (Envío)
 
