@@ -35,6 +35,7 @@ inet_interfaces = all
 mydestination = $myhostname, localhost.$mydomain, localhost, $mydomain
 home_mailbox = Maildir/
 ```
+Importante: esta configuración debe añadirse al final del archivo /etc/postfix/main.cf.
 ![configuracion](configuracion.png)
 
 ## 3. Configuración de Postfix (Envío)
