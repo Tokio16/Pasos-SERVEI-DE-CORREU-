@@ -63,18 +63,21 @@ auth_mechanisms = plain login
 ![configuracion](auth.png)
 
 
+## 4. Roundcube (Webmail)
 
+Instalamos Roundcube:
 
-## 4. Configuración de Dovecot (Recepción)
-
-
-
-## 5. Roundcube (Webmail)
-
-Configuramos la interfaz web de Roundcube editando el archivo de configuración /etc/roundcube/config.inc.php:
-
+```bash
+sudo apt install roundcube roundcube-core roundcube-mysql
+```
+Configuramos:
+```bash
+sudo nano /etc/roundcube/config.inc.php
+```
+```conf
 $config['smtp_host'] = 'localhost:25';
 $config['mail_domain'] = 'caparrella.local';
+```
 
 
 Habilitamos la configuración en el servidor Apache para que sea accesible desde el navegador:
@@ -83,7 +86,7 @@ sudo a2enconf roundcube
 sudo service apache2 restart
 
 
-## 6. Usuarios de Prueba
+## 5. Usuarios de Prueba
 
 Para verificar que todo funciona, creamos dos usuarios y generamos sus directorios de correo correspondientes:
 
