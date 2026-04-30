@@ -59,7 +59,8 @@ sudo nano /etc/dovecot/conf.d/10-auth.conf
 disable_plaintext_auth = no
 auth_mechanisms = plain login
 ```
-
+![configuracion](login.pdf)
+![configuracion](auth.pdf)
 
 
 
