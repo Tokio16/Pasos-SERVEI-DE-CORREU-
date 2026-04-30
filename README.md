@@ -60,7 +60,6 @@ disable_plaintext_auth = no
 auth_mechanisms = plain login
 ```
 ![configuracion](login.png)
-![configuracion](auth.png)
 
 
 ## 4. Roundcube (Webmail)
@@ -82,6 +81,7 @@ $config['mail_domain'] = 'caparrella.local';
 ![configuracion](login.png)
 
 A continuación, debes añadir la siguiente configuración al final del archivo.
+
 ![configuracion](image5.png)
 
 
