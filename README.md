@@ -78,6 +78,9 @@ sudo nano /etc/roundcube/config.inc.php
 $config['smtp_host'] = 'localhost:25';
 $config['mail_domain'] = 'caparrella.local';
 ```
+![configuracion](roundcube.png)
+![configuracion](login.png)
+
 
 
 Habilitamos la configuración en el servidor Apache para que sea accesible desde el navegador:
