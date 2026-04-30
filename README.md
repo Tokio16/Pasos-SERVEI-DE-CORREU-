@@ -39,14 +39,19 @@ Importante: esta configuración debe añadirse al final del archivo /etc/postfix
 
 ![configuracion](configuracion.png)
 
-## 3. Configuración de Postfix (Envío)
-
-Instalamos Postfix 
+## 3. Configuración de Dovecot (Recepción)
+Instalamos Dovecot:
 ```bash
-sudo apt install postfix
-sudo apt install postfix dovecot-imapd
-sudo apt install postfix dovecot-pop3d
+sudo apt install dovecot-core dovecot-imapd dovecot-pop3d -y
 ```
+Configuramos el almacenamiento:
+```bash
+sudo nano /etc/dovecot/conf.d/10-mail.conf
+```
+```conf
+mail_location = maildir:~/Maildir
+```
+
 
 
 ## 4. Configuración de Dovecot (Recepción)
