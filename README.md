@@ -80,7 +80,6 @@ $config['smtp_host'] = 'localhost:25';
 $config['mail_domain'] = 'caparrella.local';
 ```
 ![configuracion](roundcube.png)
-![configuracion](login.png)
 
 A continuación, debes añadir la siguiente configuración al final del archivo.
 
