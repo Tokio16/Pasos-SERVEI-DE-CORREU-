@@ -81,12 +81,8 @@ $config['mail_domain'] = 'caparrella.local';
 ![configuracion](roundcube.png)
 ![configuracion](login.png)
 
-
-
-Habilitamos la configuración en el servidor Apache para que sea accesible desde el navegador:
-
-sudo a2enconf roundcube
-sudo service apache2 restart
+A continuación, debes añadir la siguiente configuración al final del archivo.
+![configuracion](image5.png)
 
 
 ## 5. Usuarios de Prueba
