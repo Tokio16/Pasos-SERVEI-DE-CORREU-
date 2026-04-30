@@ -105,14 +105,21 @@ Alias /roundcube /var/lib/roundcube
 ## 5. Usuarios de Prueba
 
 Para verificar que todo funciona, creamos dos usuarios y generamos sus directorios de correo correspondientes:
-
-# Crear usuario Batman
+```bash
 sudo adduser batman
 sudo maildirmake.dovecot /home/batman/Maildir
 sudo chown -R batman:batman /home/batman/Maildir
 
-# Crear usuario Robin
 sudo adduser robin
 sudo maildirmake.dovecot /home/robin/Maildir
 sudo chown -R robin:robin /home/robin/Maildir
+```
+
+##6. Prueba con Telnet
+```bash
+telnet localhost
+```
+```co
+
+
 
