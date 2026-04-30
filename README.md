@@ -119,7 +119,18 @@ sudo chown -R robin:robin /home/robin/Maildir
 ```bash
 telnet localhost
 ```
-```co
+```conf
+EHLO localhost
+MAIL FROM:<batman@caparrella.local>
+RCPT TO:<robin@caparrella.local>
+DATA
+Subject: Prueba de correo
+
+Correo de prueba
+.
+QUIT
+```
+![configuracion](image1.png)
 
 
 
