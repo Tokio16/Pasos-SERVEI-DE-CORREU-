@@ -51,25 +51,20 @@ sudo nano /etc/dovecot/conf.d/10-mail.conf
 ```conf
 mail_location = maildir:~/Maildir
 ```
-![configuracion](maldir.png)  
+Configuramos autenticación:
+```bash
+sudo nano /etc/dovecot/conf.d/10-auth.conf
+```
+```conf
+sudo nano /etc/dovecot/conf.d/10-auth.conf
+```
+
 
 
 
 
 ## 4. Configuración de Dovecot (Recepción)
 
-Instalamos los paquetes de Dovecot y configuramos la ubicación del correo en /etc/dovecot/conf.d/10-mail.conf:
-
-mail_location = maildir:~/Maildir
-
-
-En /etc/dovecot/conf.d/10-auth.conf permitimos el acceso con texto plano para las pruebas:
-
-disable_plaintext_auth = no
-
-auth_mechanisms = plain login
-
-sudo service dovecot restart
 
 
 ## 5. Roundcube (Webmail)
