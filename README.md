@@ -89,6 +89,15 @@ A continuación, abriremos el archivo de configuración de Apache2 y añadiremos
 ```bash
 sudo nano /etc/apache2/conf-available/roundcube.conf 
 ```
+```confi
+Alias /roundcube /var/lib/roundcube
+
+<Directory /var/lib/roundcube>
+    Options FollowSymLinks
+    AllowOverride All
+    Require all granted
+</Directory>
+```
 ![configuracion](image4.png)
 
 
