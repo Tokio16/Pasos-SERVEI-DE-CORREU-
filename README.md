@@ -51,6 +51,8 @@ sudo nano /etc/dovecot/conf.d/10-mail.conf
 ```conf
 mail_location = maildir:~/Maildir
 ```
+![configuracion](maldir.png)  
+
 
 
 
