@@ -10,19 +10,44 @@ sudo apt update && sudo apt upgrade
 sudo apt install apache2 mysql-server -y
 sudo apt install php php-mysql php-intl php-xml php-mbstring php-curl php-zip -y
 ```
+## 2.Instalación de Postfix (Envío) 
+Aquí se instala el entorno necesario para aplicaciones web. Apache permitirá acceder vía navegador, MySQL almacenará datos y PHP ejecutará aplicaciones como el webmail.
+Instalamos el servidor SMTP.
+```bash
+sudo apt install postfix
+```
+Instalamos soporte con Dovecot.
+```bash
+sudo apt install postfix dovecot-imapd
+sudo apt install postfix dovecot-pop3d
+```
+Configuramos el archivo principal.
+```bash
+sudo nano /etc/postfix/main.cf
+```
+```conf
 
-## 2. Configuración de Postfix (Envío)
+# /etc/postfix/main.cf
+myhostname = caparrella.local
+mydomain = caparrella.local
+myorigin = /etc/mailname
+inet_interfaces = all
+mydestination = $myhostname, localhost.$mydomain, localhost, $mydomain
+home_mailbox = Maildir/
+```
 
-Instalamos Postfix y editamos el archivo /etc/postfix/main.cf para definir nuestro dominio y la estructura de las carpetas de correo:
 
-Dominio: caparrella.local
+## 3. Configuración de Postfix (Envío)
 
-Mailbox: Maildir/
+Instalamos Postfix 
+```bash
+sudo apt install postfix
+sudo apt install postfix dovecot-imapd
+sudo apt install postfix dovecot-pop3d
+```
 
-sudo service postfix restart
 
-
-## 3. Configuración de Dovecot (Recepción)
+## 4. Configuración de Dovecot (Recepción)
 
 Instalamos los paquetes de Dovecot y configuramos la ubicación del correo en /etc/dovecot/conf.d/10-mail.conf:
 
@@ -38,7 +63,7 @@ auth_mechanisms = plain login
 sudo service dovecot restart
 
 
-## 4. Roundcube (Webmail)
+## 5. Roundcube (Webmail)
 
 Configuramos la interfaz web de Roundcube editando el archivo de configuración /etc/roundcube/config.inc.php:
 
@@ -52,7 +77,7 @@ sudo a2enconf roundcube
 sudo service apache2 restart
 
 
-## 5. Usuarios de Prueba
+## 6. Usuarios de Prueba
 
 Para verificar que todo funciona, creamos dos usuarios y generamos sus directorios de correo correspondientes:
 
