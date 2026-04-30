@@ -35,7 +35,7 @@ inet_interfaces = all
 mydestination = $myhostname, localhost.$mydomain, localhost, $mydomain
 home_mailbox = Maildir/
 ```
-![configuracion][configuracion.png]
+![configuracion](configuracion.png)
 
 ## 3. Configuración de Postfix (Envío)
 
