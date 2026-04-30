@@ -85,6 +85,13 @@ A continuación, debes añadir la siguiente configuración al final del archivo.
 
 ![configuracion](image5.png)
 
+A continuación, abriremos el archivo de configuración de Apache2 y añadiremos el siguiente código al final del mismo.
+```bash
+sudo nano /etc/apache2/conf-available/roundcube.conf 
+```
+![configuracion](image4.png)
+
+
 
 ## 5. Usuarios de Prueba
 
